@@ -29,8 +29,8 @@ const injectScript = `
   }());
 `;
 
-var Sample2 = React.createClass({
-  onBridgeMessage: function (message) {
+class Sample2 extends React.Component {
+  onBridgeMessage = (message) => {
     const { webviewbridge } = this.refs;
 
     switch (message) {
@@ -41,8 +41,9 @@ var Sample2 = React.createClass({
         console.log("we have got a message from webview! yeah");
         break;
     }
-  },
-  render: function() {
+  };
+
+  render() {
     return (
       <View style={styles.container}>
       <WebViewBridge
@@ -60,7 +61,7 @@ var Sample2 = React.createClass({
         </View>
     );
   }
-});
+}
 
 module.exports = Sample2;
 
